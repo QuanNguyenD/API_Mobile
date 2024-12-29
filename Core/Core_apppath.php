@@ -1,0 +1,31 @@
+<?php
+require_once APPPATH.'/Controller/DrugController.php';
+require_once APPPATH.'/Controller/LoginController.php';
+require_once APPPATH.'/Controller/DrugsController.php';
+require_once APPPATH.'/Controller/DoctorController.php';
+require_once APPPATH.'/Controller/SpecialityController.php';
+require_once APPPATH.'/Controller/SpecialitiesController.php';
+require_once APPPATH.'/Controller/SignupController.php';
+require_once APPPATH.'/Controller/DoctorsController.php';
+require_once APPPATH.'/Controller/PatientsController.php';
+require_once APPPATH.'/Controller/PatientController.php';
+require_once APPPATH.'/Controller/ServiceController.php';
+require_once APPPATH.'/Controller/ServicesController.php';
+require_once APPPATH.'/Controller/DoctorAndServiceController.php';
+require_once APPPATH.'/Controller/PatientBookingController.php';
+require_once APPPATH.'/Controller/PatientBookingsController.php';
+require_once APPPATH.'/Controller/BookingController.php';
+require_once APPPATH.'/Controller/BookingsController.php';
+require_once APPPATH.'/Controller/RoomController.php';
+require_once APPPATH.'/Controller/RoomsController.php';
+require_once APPPATH.'/Controller/PatientProfileController.php';
+require_once APPPATH.'/Controller/AppointmentController.php';
+require_once APPPATH.'/Controller/AppointmentsController.php';
+require_once APPPATH.'/Controller/AppointmentQueueController.php';
+require_once APPPATH.'/Controller/AppointmentRecordController.php';
+require_once APPPATH.'/Controller/isDoctorBusyController.php';
+require_once APPPATH.'/Controller/PatientAppoimentsController.php';
+require_once APPPATH.'/Controller/PatientAppointmentController.php';
+require_once APPPATH.'/Controller/PatientNotificationsController.php';
+require_once APPPATH.'/Controller/PatientNotificationController.php';
+?>
