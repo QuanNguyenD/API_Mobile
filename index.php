@@ -72,8 +72,8 @@ require_once APPPATH.'/config/config.php';
 require_once APPPATH. '/autoload.php';
 require_once APPPATH.'/Core/App.php';
 require_once APPPATH."/helper/helpers.php";
-
-
+require_once APPPATH.'/Core/Controller.php';
+require_once APPPATH.'/Core/DataEntry.php';
 
 
 $app = new App();

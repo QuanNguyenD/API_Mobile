@@ -1,4 +1,5 @@
 <?php
+require_once APPPATH.'/Core/Controller.php';
 /**
  * Index Controller
  */
