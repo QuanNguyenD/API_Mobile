@@ -60,8 +60,7 @@ class LoginController extends Controller{
             $this->jsonecho();
         }
         $User = Controller::model("User", $email);
-        if( !$User->isAvailable() ||
-            $User->get("active") != 1 
+        if( !$User->isAvailable()
             || 
             !password_verify($password, $User->get("password")) 
             )
@@ -74,7 +73,6 @@ class LoginController extends Controller{
             "email" => $User->get("email"),
             "username" => $User->get("username"),
             "active" => (int)$User->get("active"),
-            "avatar" => $User->get("avatar"),
             "created_at" => $User->get("created_at"),
             "updated_at" => $User->get("updated_at"),
             

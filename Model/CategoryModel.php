@@ -1,11 +1,13 @@
 <?php
 
-class TasksModel extends DataEntry{
+class CategoryModel extends DataEntry{
+    
     protected $db;
     protected $qb;
+
+
     public function __construct($uniqid=0)
     {
-        
         $this->db = App::getConnection();     
 		$this->qb = new \Pixie\QueryBuilder\QueryBuilderHandler($this->db);
         parent::__construct();
@@ -25,7 +27,7 @@ class TasksModel extends DataEntry{
 
 		if ($col) {
 			
-			$query = $this->qb->table(TB_TASKS)
+			$query = $this->qb->table(TB_CATEGORIES)
 						->where($col, "=", $uniqid)
 						->limit(1)
 						->select("*");
@@ -49,13 +51,10 @@ class TasksModel extends DataEntry{
     {
         $defaults = array(
             "title" => "",
-            "description" => "",
-            "status" => "",
-            "due_date" => "",
-            "priority" => "",
-            "category_id" => "",
-            "create_at" => date("Y-m-d H:i:s"),
-            "update_at" => date("Y-m-d H:i:s"),
+            "name" => "",
+            "color_code" => "",
+            "create_at" => date("Y-m-d H:i:s")
+            
         );
 
 
@@ -74,14 +73,10 @@ class TasksModel extends DataEntry{
         $id = $this->qb->table(TB_TASKS)
             ->insert(array(
                 "id" => null,
-                "title" => $this->get("title"),
-                "description" => $this->get("description"),
-                "status" => $this->get("status"),
-                "due_date" => $this->get("due_date"),
-                "priority" => $this->get("priority"),
-                "category_id" => $this->get("category_id"),
-                "create_at" => $this->get("create_at"),
-                "update_at" => $this->get("update_at")
+                "name" => $this->get("name"),
+                "color_code" => $this->get("color_code"),
+                "create_at" => $this->get("create_at")
+                
             ));
 
         $this->set("id", $id);
@@ -102,34 +97,23 @@ class TasksModel extends DataEntry{
         $id = $this->qb->table(TB_TASKS)
             ->where("id", "=", $this->get("id"))
             ->update(array(
-                "title" => $this->get("title"),
-                "description" => $this->get("description"),
-                "status" => $this->get("status"),
-                "due_date" => $this->get("due_date"),
-                "priority" => $this->get("priority"),
-                "category_id" => $this->get("category_id"),
-                "create_at" => $this->get("create_at"),
-                "update_at" => $this->get("update_at")
+                "name" => $this->get("name"),
+                "color_code" => $this->get("color_code"),
+                "create_at" => $this->get("create_at")
             ));
 
         return $this;
 	}
-
     public function getAll(){
-        $query = $this->qb->table(TB_TASKS)->leftJoin(TB_CATEGORIES,TB_CATEGORIES.".id","=",TB_TASKS.".category_id")
-        ->select([
-            TB_TASKS.".*",
-            $this->qb->raw(TB_CATEGORIES.".id as category_id"),
-            $this->qb->raw(TB_CATEGORIES.".name as category_name"),
-
-        ]);
+        $query = $this->qb->table(TB_CATEGORIES)->select("*");
         return $query;
     }
-    
 
 
 
 }
+
+
 
 
 ?>

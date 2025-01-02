@@ -1,6 +1,6 @@
 <?php
 
-class UserMOdel extends DataEntry{
+class UserModel extends DataEntry{
     protected $db;
     protected $qb;
     public function __construct($uniqid=0)
@@ -51,19 +51,11 @@ class UserMOdel extends DataEntry{
         $defaults = array(
             "username"=>"",
             "email" => "",
-            "phone" => "",
             "password" => "",
             "name" => "",
-            "description" => "",
-            "price" => 0,
-            "role" => "admin",
-            "active" => "1",
-            "avatar" => "",
             "create_at" => date("Y-m-d H:i:s"),
             "update_at" => date("Y-m-d H:i:s"),
-            "speciality_id" => "",
-            "room_id" => "",
-            "recovery_token" => ""
+            
         );
 
 
