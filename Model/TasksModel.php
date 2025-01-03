@@ -125,6 +125,10 @@ class TasksModel extends DataEntry{
         ]);
         return $query;
     }
+    public function add($title){
+        $query = $this->qb->table(TB_TASKS)->where(TB_TASKS.".title","=", $title);
+        return $query;
+    }
     
 
 

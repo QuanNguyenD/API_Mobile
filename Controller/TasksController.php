@@ -47,7 +47,7 @@ class TasksController extends Controller{
             //     $this->resp->msg = "You are not admin & you can't do this action !";
             //     $this->jsonecho();
             // }
-            //$this->add($id);
+            //$this->add();
         }
         elseif($request_method ==='DELETE'){
             // $decoded = JWT::decode($jwt, new Key(EC_SALT, 'HS256'));
@@ -103,5 +103,30 @@ class TasksController extends Controller{
         $this->jsonecho();
         
     }
+    // private function add(){
+    //     $this->resp->result = 0;
+    //     $data = [];
+    //     $required_fields = ["title"];
+    //     foreach( $required_fields as $field)
+    //     {
+    //         if( !Input::post($field) )
+    //         {
+    //             $this->resp->msg = "Missing field: ".$field;
+    //             $this->jsonecho();
+    //         }
+    //     }
+    //     $title = Input::post("title");
+    //     // $TaskMd = new TasksModel();
+    //     // $query = $TaskMd ->add($title);
+
+    //     $task = Controller::model("Tasks");
+    //     $task->set('title',$title)
+    //         ->set('description', $de)
+
+
+
+
+
+    // }
 }
 ?>
